@@ -4,6 +4,8 @@ let titleHtml = ``
 let moviesArray = []
 let watchlistArray = []
 
+watchlistArray = watchlistArray || []
+
 let movieInput = document.getElementById('movie');
 let movieContainer = document.getElementById('movie-container')
 const addToWatchlist = document.querySelector('.add-to-watchlist')
