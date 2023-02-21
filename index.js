@@ -22,11 +22,15 @@ function getMovies(search){
     fetch(`https://www.omdbapi.com/?apikey=e104f85c&type=movie&s=${search}`)
         .then(response => response.json())
         .then(data => {
-        for (element of data.Search){
-            moviesArray.push(element.Title)
-        }
-        console.log(moviesArray)
-        getMovieInfo()
+            if (data.Search){
+                for (element of data.Search){
+                    moviesArray.push(element.Title)
+                }
+                console.log(moviesArray)
+                getMovieInfo()
+            } else {
+                movieContainer.innerHTML = `<h2>No films found</h2>`
+            }
 
     
         })
@@ -99,10 +103,10 @@ function watchlistLoad(){
 }
 
 function deleteMovie(movie){
-    const getWatchlistString = localStorage.getItem('watchlistArray');
-    const watchlistArray = JSON.parse(getWatchlistString);
+    let getWatchlistString = localStorage.getItem('watchlistArray');
+    let watchlistArray = JSON.parse(getWatchlistString);
     watchlistArray = watchlistArray || []
-    const film = movie.getAttribute("data-delete");
+    let film = movie.getAttribute("data-delete");
     let index = watchlistArray.indexOf(film);
     watchlistArray.splice(index,1)
     localStorage.setItem('watchlistArray', JSON.stringify(watchlistArray));
