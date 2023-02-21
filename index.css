@@ -44,7 +44,7 @@ form {
 input {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    height: 2rem;
+    height: 0.2rem;
     width: 75vw;
     padding: 20px;
 }

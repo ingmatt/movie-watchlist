@@ -9,9 +9,6 @@ let movieContainer = document.getElementById('movie-container')
 const addToWatchlist = document.querySelector('.add-to-watchlist')
 let watchlistContainer = document.getElementById('watchlist-container')
 
-
-
-
 document.querySelector('#form').addEventListener('submit', function (e) {
     e.preventDefault();
     movieContainer.innerHTML = ``
@@ -81,7 +78,6 @@ function watchlistLoad(){
         fetch(`https://www.omdbapi.com/?apikey=e104f85c&type=movie&t=${element}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 titleHtml += `
                 <div class="movie-info">
                 <img class="movie-poster" src="${data.Poster}" alt="movie-poster">
