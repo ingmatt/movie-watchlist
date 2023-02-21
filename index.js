@@ -4,8 +4,6 @@ let titleHtml = ``
 let moviesArray = []
 let watchlistArray = []
 
-watchlistArray = watchlistArray || []
-
 let movieInput = document.getElementById('movie');
 let movieContainer = document.getElementById('movie-container')
 const addToWatchlist = document.querySelector('.add-to-watchlist')
@@ -61,9 +59,9 @@ function getMovieInfo(){
 }
 
 function addToList(movie) {
-    watchlistArray = watchlistArray || []
     const getWatchlistString = localStorage.getItem('watchlistArray');
     let watchlistArray = JSON.parse(getWatchlistString);
+    watchlistArray = watchlistArray || []
     let film = movie.getAttribute("data-add");
     watchlistArray.push(film)
     console.log(watchlistArray)
@@ -103,6 +101,7 @@ function watchlistLoad(){
 function deleteMovie(movie){
     const getWatchlistString = localStorage.getItem('watchlistArray');
     const watchlistArray = JSON.parse(getWatchlistString);
+    watchlistArray = watchlistArray || []
     const film = movie.getAttribute("data-delete");
     let index = watchlistArray.indexOf(film);
     watchlistArray.splice(index,1)
