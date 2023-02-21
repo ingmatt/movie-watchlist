@@ -1,0 +1,116 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    height: 220px;
+    background-color: #003b59;
+}
+
+.header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 2rem 0 2rem;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.watchlist-link {
+    color: white;
+    text-decoration: none;
+}
+
+form {
+    margin: -1.2rem auto 1.5rem auto;
+
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 2rem;
+    width: 75vw;
+    padding: 20px;
+}
+
+button {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: none;
+    padding: 11px;   
+}
+
+.movie-info {
+    margin: 1rem 0.5rem;
+    display: flex;
+}
+
+.movie-poster {
+    height: 200px;
+    width: 150px;
+    margin: 1.125rem;
+    border-radius: 4px;
+}
+
+.movie-description {
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.movie-title {
+    font-weight: 500;
+    font-size: 1.2rem;;
+}
+
+.watchlist {
+    display: flex;
+    color: #111827;
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+.movie-genre {
+    padding: 0 0.75rem;
+}
+
+.movie-plot {
+    color: #6B7280;
+    font-weight: 400;
+}
+
+#add-to-watchlist {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-to-watchlist:hover {
+    color: red;
+}
+
+
+.watchlist-header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 2rem 3rem 2rem;
+}
+
+.watchlist-container {
+    margin: 2rem auto;
+}
