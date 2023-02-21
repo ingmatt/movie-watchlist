@@ -61,9 +61,8 @@ function getMovieInfo(){
 function addToList(movie) {
     const getWatchlistString = localStorage.getItem('watchlistArray');
     let watchlistArray = JSON.parse(getWatchlistString);
-    
     let film = movie.getAttribute("data-add");
-    console.log(film)
+    watchlistArray = watchlistArray || []
     watchlistArray.push(film)
     console.log(watchlistArray)
     const watchlistString = JSON.stringify(watchlistArray);
@@ -101,9 +100,8 @@ function watchlistLoad(){
 
 function deleteMovie(movie){
     const getWatchlistString = localStorage.getItem('watchlistArray');
-    let watchlistArray = JSON.parse(getWatchlistString);
-    
-    let film = movie.getAttribute("data-delete");
+    const watchlistArray = JSON.parse(getWatchlistString);
+    const film = movie.getAttribute("data-delete");
     let index = watchlistArray.indexOf(film);
     watchlistArray.splice(index,1)
     localStorage.setItem('watchlistArray', JSON.stringify(watchlistArray));
