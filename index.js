@@ -59,10 +59,10 @@ function getMovieInfo(){
 }
 
 function addToList(movie) {
+    watchlistArray = watchlistArray || []
     const getWatchlistString = localStorage.getItem('watchlistArray');
     let watchlistArray = JSON.parse(getWatchlistString);
     let film = movie.getAttribute("data-add");
-    watchlistArray = watchlistArray || []
     watchlistArray.push(film)
     console.log(watchlistArray)
     const watchlistString = JSON.stringify(watchlistArray);
