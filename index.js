@@ -63,6 +63,7 @@ function addToList(movie) {
     let watchlistArray = JSON.parse(getWatchlistString);
     
     let film = movie.getAttribute("data-add");
+    console.log(film)
     watchlistArray.push(film)
     console.log(watchlistArray)
     const watchlistString = JSON.stringify(watchlistArray);
